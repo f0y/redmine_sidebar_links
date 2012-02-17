@@ -1,0 +1,37 @@
+<%=
+    if controller
+      action_name = controller.action_name
+      controller_name = controller.class.name
+
+      if (controller_name == 'ProjectsController' and action_name == 'show') ||
+              (controller_name == 'ProjectsController' and action_name == 'index') ||
+              (controller_name == 'WelcomeController' and action_name == 'index')
+        stylesheet_link_tag "sidebar_links.css", :plugin => "redmine_sidebar_links", :media => "screen" %>
+
+        <div class="sidebar_links">
+          <h3><%= l(:label_links) %></h3>
+
+          <a href="http://fruct.org/" target="_blank">
+            <%= image_tag('http://qt.e-werest.org/templates/skin/new/images/fruct_ewerest_logo.png', :alt => l(:label_fruct)) %>
+          </a>
+
+          <a href="http://qt.e-werest.org/" target="_blank">
+            <%= image_tag('http://meego.e-werest.org/templates/skin/new/images/qt2.png', :alt => l(:label_ewerest)) %>
+          </a>
+
+          <a href="http://meego.e-werest.org/" target="_blank">
+            <%= image_tag('http://qt.e-werest.org/templates/skin/new/images/meego_ewerest_logo.png', :alt => l(:label_meego)) %>
+          </a>
+
+        </div>
+
+        <script type="text/javascript">
+            $('main').className = '';
+        </script>
+
+    <% end %>
+<% end %>
+
+
+
+
